@@ -1,18 +1,26 @@
 package br.com.amigosaude.app.amigosaude;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.location.Location;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 public class Map_activity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private FusedLocationProviderClient mFusedLocationClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +42,7 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+    @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -42,8 +51,19 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
         mMap.setMinZoomPreference(10);
 
 
-        //PEGA A LOCALIZAÇÃO DO USUÁRIO
-        // Em contrução
+        //PEGA A LOCALIZAÇÃO DO USUÁRIO - Em contrução
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        mFusedLocationClient.getLastLocation()
+                .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                    @Override
+                    public void onSuccess(Location location) {
+                        // Got last known location. In some rare situations this can be null.
+                        if (location != null) {
+                            new AlertDialog.Builder(Map_activity.this).setTitle("Localização").setMessage("Location != null").setNeutralButton("OK", null).show();
+                            //Toast.makeText(this, "Olá mundo !", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
 
         // ADICIONA UM MARCADOR NA ETECIA E MOVE O MAPA
         LatLng etecia = new LatLng(-23.7049869, -46.6904032);
