@@ -38,9 +38,16 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
+        // CONFIGURAÇOES DE VISUALIZAÇÃO DO MAPA
+        mMap.setMinZoomPreference(10);
+
+
+        //PEGA A LOCALIZAÇÃO DO USUÁRIO
+        // Em contrução
+
+        // ADICIONA UM MARCADOR NA ETECIA E MOVE O MAPA
         LatLng etecia = new LatLng(-23.7049869, -46.6904032);
-        mMap.addMarker(new MarkerOptions().position(etecia).title("Marcador EtecIA"));
+        mMap.addMarker(new MarkerOptions().position(etecia).title("ETECIA"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(etecia));
     }
 }
