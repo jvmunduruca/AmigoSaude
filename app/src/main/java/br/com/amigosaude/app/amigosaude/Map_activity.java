@@ -2,11 +2,15 @@ package br.com.amigosaude.app.amigosaude;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.location.Location;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -22,6 +26,9 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     private FusedLocationProviderClient mFusedLocationClient;
 
+    private static final String TAG = "Map_activity";
+    private static final int ERROR_DIALOG_REQUEST = 9001;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +37,35 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        if(isServicesOK()){
+            init();
+        }
+
+
+    }
+
+    private void init(){
+        Toast.makeText(this,"init() iniciado", Toast.LENGTH_SHORT);
+    }
+
+    public boolean isServicesOK(){
+        Log.d(TAG, "isServicesOK: checando versão do Goggle Services");
+
+        int disponivel = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(Map_activity.this);
+
+        if(disponivel == ConnectionResult.SUCCESS){
+            //Tudo OK com o Google Services
+            Log.d(TAG, "isServicesOK; Google Plays Services está OK");
+            return true;
+        }else if(GoogleApiAvailability.getInstance().isUserResolvableError(disponivel)){
+            // um erro ocorreu mais pode ser resolvido
+            Log.d(TAG, "isServicesOK: Ocorreu um erro e pode ser resolvido");
+            Dialog dialog = GoogleApiAvailability.getInstance().getErrorDialog(Map_activity.this, disponivel, ERROR_DIALOG_REQUEST);
+        } else {
+            Toast.makeText(this,"Não é possivel fazer solicitações ao Mapa", Toast.LENGTH_SHORT);
+        }
+        return false;
     }
 
 
@@ -59,8 +95,7 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
                     public void onSuccess(Location location) {
                         // Got last known location. In some rare situations this can be null.
                         if (location != null) {
-                            new AlertDialog.Builder(Map_activity.this).setTitle("Localização").setMessage("Location != null").setNeutralButton("OK", null).show();
-                            //Toast.makeText(this, "Olá mundo !", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Map_activity.this,"Localização OK",Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
