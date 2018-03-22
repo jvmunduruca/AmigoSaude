@@ -29,14 +29,17 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".Map_activity"
-            android:label="@string/title_activity_map_activity">
+            android:name=".Splash_activity"
+            android:label="Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Map_activity"
+            android:label="MapActivity"/>
     </application>
 
 </manifest>
