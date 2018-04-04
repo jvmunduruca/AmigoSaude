@@ -1,9 +1,14 @@
 package br.com.amigosaude.app.amigosaude;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -14,29 +19,38 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+
+import java.util.Map;
 
 public class Map_activity extends FragmentActivity implements OnMapReadyCallback {
 
+    private static final String TAG = "Map_activity";
+
+    //VARIAVEIS
     private GoogleMap mMap;
     private FusedLocationProviderClient mFusedLocationClient;
+    private Boolean meuLocalOk = true;
+    private static final float ZOOM_PADRAO= 15f;
 
-    private static final String TAG = "Map_activity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.map_layout);
 
+        initMap();
+
+    }
+
+    public void initMap(){
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-
-
     }
-
-
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -49,28 +63,59 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
     @SuppressLint("MissingPermission")
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        Toast.makeText(Map_activity.this,"Mapa OK",Toast.LENGTH_SHORT).show();
         mMap = googleMap;
-
-        // CONFIGURAÇOES DE VISUALIZAÇÃO DO MAPA
-        mMap.setMinZoomPreference(10);
 
 
         //PEGA A LOCALIZAÇÃO DO USUÁRIO - Em contrução
+        if(meuLocalOk){
+            Toast.makeText(Map_activity.this,"Meu Local",Toast.LENGTH_SHORT);
+
+            pegaLocalDisp();
+
+            if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                    && ActivityCompat.checkSelfPermission(this,Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+                return;
+            }
+            mMap.setMyLocationEnabled(true);
+        }
+
+        // ADICIONA UM MARCADOR NA ETECIA E MOVE O MAPA
+        //LatLng etecia = new LatLng(-23.7049869, -46.6904032);
+        //mMap.addMarker(new MarkerOptions().position(etecia).title("ETECIA"));
+        //mMap.moveCamera(CameraUpdateFactory.newLatLng(etecia));
+    }
+
+    public void pegaLocalDisp(){
+        Log.d(TAG,"pegaLocalDisp: pegando localização");
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-        mFusedLocationClient.getLastLocation()
-                .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+        try{
+            if(meuLocalOk){
+                Task location = mFusedLocationClient.getLastLocation();
+                location.addOnCompleteListener(new OnCompleteListener() {
                     @Override
-                    public void onSuccess(Location location) {
-                        // Got last known location. In some rare situations this can be null.
-                        if (location != null) {
-                            Toast.makeText(Map_activity.this,"Localização OK",Toast.LENGTH_SHORT).show();
+                    public void onComplete(@NonNull Task task) {
+                        if(task.isSuccessful()){
+                            Toast.makeText(Map_activity.this,"Pegando localização atual",Toast.LENGTH_SHORT).show();
+                            Log.d(TAG,"onComplete: Localização atual encontrada");
+                            Location localAtual = (Location) task.getResult();
+
+                            moveCamera(new LatLng(localAtual.getLongitude(),localAtual.getLongitude()),ZOOM_PADRAO);
+                        }else {
+                            Log.d(TAG,"onComplete: Localização atual NÂO encontrada");
+                            Toast.makeText(Map_activity.this,"Local atual indisponível",Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
+            }
+        }catch (SecurityException e){
+            Toast.makeText(Map_activity.this,"Erro SecurityException pegaLocalDisp",Toast.LENGTH_SHORT);
+        }
 
-        // ADICIONA UM MARCADOR NA ETECIA E MOVE O MAPA
-        LatLng etecia = new LatLng(-23.7049869, -46.6904032);
-        mMap.addMarker(new MarkerOptions().position(etecia).title("ETECIA"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(etecia));
+    }
+
+    private void moveCamera(LatLng latLng, float zoom){
+        Log.d(TAG,"moveCamera: movendo a camera para LAT"+latLng.latitude+", LNG: "+latLng.longitude);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
     }
 }
