@@ -12,7 +12,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.widget.Toast;
-
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -130,7 +129,6 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
             // ADICIONA UM MARCADOR NA ETECIA E MOVE O MAPA
             LatLng etecia = new LatLng(-23.7049869, -46.6904032);
             mMap.addMarker(new MarkerOptions().position(etecia).title("ETECIA"));
-            //mMap.moveCamera(CameraUpdateFactory.newLatLng(etecia));
             moveCamera(etecia,ZOOM_PADRAO);
         }
 
