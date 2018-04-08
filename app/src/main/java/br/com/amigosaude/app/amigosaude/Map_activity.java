@@ -3,7 +3,6 @@ package br.com.amigosaude.app.amigosaude;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
@@ -25,10 +24,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-
-import java.util.Map;
 
 public class Map_activity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -130,12 +126,15 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
             }
             pegaLocalDisp();
             mMap.setMyLocationEnabled(true);
+        } else {
+            // ADICIONA UM MARCADOR NA ETECIA E MOVE O MAPA
+            LatLng etecia = new LatLng(-23.7049869, -46.6904032);
+            mMap.addMarker(new MarkerOptions().position(etecia).title("ETECIA"));
+            //mMap.moveCamera(CameraUpdateFactory.newLatLng(etecia));
+            moveCamera(etecia,ZOOM_PADRAO);
         }
 
-        // ADICIONA UM MARCADOR NA ETECIA E MOVE O MAPA
-        //LatLng etecia = new LatLng(-23.7049869, -46.6904032);
-        //mMap.addMarker(new MarkerOptions().position(etecia).title("ETECIA"));
-        //mMap.moveCamera(CameraUpdateFactory.newLatLng(etecia));
+
     }
 
     public void pegaLocalDisp(){
@@ -156,6 +155,8 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
                         }else {
                             Log.d(TAG,"onComplete: Localização atual NÂO encontrada");
                             Toast.makeText(Map_activity.this,"Local atual indisponível",Toast.LENGTH_SHORT).show();
+
+
                         }
                     }
                 });
