@@ -2,15 +2,20 @@ package br.com.amigosaude.app.amigosaude;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Dialog;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -32,8 +37,12 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
     //VARIAVEIS
     private GoogleMap mMap;
     private FusedLocationProviderClient mFusedLocationClient;
-    private Boolean meuLocalOk = true;
     private static final float ZOOM_PADRAO= 15f;
+    private static final int ERROR_DIALOG_REQUEST = 9001;
+    private static final String FINE_LOCATION = Manifest.permission.ACCESS_FINE_LOCATION;
+    private static final String COARSE_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION;
+    private static final int COD_REQ_PERMISSOES = 1;
+    private Boolean permissoesDadas = false;
 
 
     @Override
@@ -41,16 +50,60 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.map_layout);
 
-        initMap();
+        pegaPermissoes();
+
+        iniciaMapa();
 
     }
 
-    public void initMap(){
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+    private void pegaPermissoes(){
+        Log.d(TAG,"pegarPermissoes : Verificando permissões");
+        String[] permissoes = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
+        if(ContextCompat.checkSelfPermission(this.getApplicationContext(),FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
+            if (ContextCompat.checkSelfPermission(this.getApplicationContext(),COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED){
+                permissoesDadas = true;
+                Log.d(TAG,"pegarPermissoes : Permissoes OK, iniciar mapa");
+                return;
+            } else {
+                ActivityCompat.requestPermissions(this,permissoes, COD_REQ_PERMISSOES);
+            }
+
+        } else {
+            ActivityCompat.requestPermissions(this,permissoes, COD_REQ_PERMISSOES);
+        }
     }
+
+    public void iniciaMapa(){
+        Log.d(TAG,"iniciaMapa : Chamando activity Map");
+        if(isServicesOK()){
+            SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                    .findFragmentById(R.id.map);
+            mapFragment.getMapAsync(this);
+        } else {
+            Toast.makeText(this,"Não foi possivel iniciar",Toast.LENGTH_SHORT);
+        }
+    }
+
+    public boolean isServicesOK(){
+        Log.d(TAG, "isServicesOK: checando versão do Goggle Services");
+
+        int disponivel = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(this);
+
+        if(disponivel == ConnectionResult.SUCCESS){
+            //Tudo OK com o Google Services
+            Log.d(TAG, "isServicesOK; Google Plays Services está OK");
+            return true;
+        }else if(GoogleApiAvailability.getInstance().isUserResolvableError(disponivel)){
+            // um erro ocorreu mais pode ser resolvido
+            Log.d(TAG, "isServicesOK: Ocorreu um erro e pode ser resolvido");
+            Toast.makeText(this,"Google Services sendo resolvido", Toast.LENGTH_SHORT).show();
+            Dialog dialog = GoogleApiAvailability.getInstance().getErrorDialog(this, disponivel, ERROR_DIALOG_REQUEST);
+        } else {
+            Toast.makeText(this,"Não é possivel fazer solicitações ao Mapa", Toast.LENGTH_SHORT);
+        }
+        return false;
+    }
+
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -68,15 +121,14 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
 
 
         //PEGA A LOCALIZAÇÃO DO USUÁRIO - Em contrução
-        if(meuLocalOk){
+        if(permissoesDadas){
             Toast.makeText(Map_activity.this,"Meu Local",Toast.LENGTH_SHORT);
-
-            pegaLocalDisp();
 
             if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
                     && ActivityCompat.checkSelfPermission(this,Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED){
                 return;
             }
+            pegaLocalDisp();
             mMap.setMyLocationEnabled(true);
         }
 
@@ -90,7 +142,7 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
         Log.d(TAG,"pegaLocalDisp: pegando localização");
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         try{
-            if(meuLocalOk){
+            if(permissoesDadas){
                 Task location = mFusedLocationClient.getLastLocation();
                 location.addOnCompleteListener(new OnCompleteListener() {
                     @Override
@@ -100,7 +152,7 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
                             Log.d(TAG,"onComplete: Localização atual encontrada");
                             Location localAtual = (Location) task.getResult();
 
-                            moveCamera(new LatLng(localAtual.getLongitude(),localAtual.getLongitude()),ZOOM_PADRAO);
+                            moveCamera(new LatLng(localAtual.getLatitude(),localAtual.getLongitude()),ZOOM_PADRAO);
                         }else {
                             Log.d(TAG,"onComplete: Localização atual NÂO encontrada");
                             Toast.makeText(Map_activity.this,"Local atual indisponível",Toast.LENGTH_SHORT).show();
@@ -117,5 +169,24 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
     private void moveCamera(LatLng latLng, float zoom){
         Log.d(TAG,"moveCamera: movendo a camera para LAT"+latLng.latitude+", LNG: "+latLng.longitude);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        permissoesDadas = false;
+        switch (requestCode){
+            case COD_REQ_PERMISSOES:{
+                if (grantResults.length > 0){
+                    for(int i = 0; i < grantResults.length; i++){
+                        if(grantResults[i] != PackageManager.PERMISSION_GRANTED){
+                            permissoesDadas = false;
+                            return;
+                        }
+                    }
+                    permissoesDadas = true;
+                    iniciaMapa();
+                }
+            }
+        }
     }
 }
