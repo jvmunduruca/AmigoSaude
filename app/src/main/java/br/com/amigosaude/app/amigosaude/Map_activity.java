@@ -4,6 +4,8 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,6 +13,10 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
@@ -24,6 +30,11 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+
+import java.io.IOException;
+import java.security.Key;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Map_activity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -39,16 +50,56 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
     private static final int COD_REQ_PERMISSOES = 1;
     private Boolean permissoesDadas = false;
 
+    //WIDGETS
+    private EditText txt_MapBusca;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.map_layout);
+        txt_MapBusca = (EditText) findViewById(R.id.txt_busca);
 
         pegaPermissoes();
 
         iniciaMapa();
 
+    }
+
+    private void init(){
+        Log.d(TAG,"init: iniciando");
+        txt_MapBusca.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
+                if(actionId == EditorInfo.IME_ACTION_SEARCH
+                        || actionId == EditorInfo.IME_ACTION_DONE
+                        || keyEvent.getAction() == KeyEvent.ACTION_DOWN
+                        || keyEvent.getAction() == KeyEvent.KEYCODE_ENTER){
+                    //EXECUTA O METODO DE BUSCA
+                    geoLocalizacao();
+                }
+                return false;
+            }
+        });
+    }
+
+    public void geoLocalizacao(){
+        Log.d(TAG,"geoLocalizacao: Localizando");
+
+        String stringBusca = txt_MapBusca.getText().toString();
+
+        Geocoder geocoder = new Geocoder(Map_activity.this);
+        List<Address> list = new ArrayList<>();
+        try{
+            list = geocoder.getFromLocationName(stringBusca,1);
+        }catch (IOException e){
+            Log.e(TAG,"geoLocalizacao: IOException: " + e.getMessage());
+        }
+        if(list.size() > 0){
+            Address address = list.get(0);
+
+            Log.d(TAG,"geoLocalizacao: Encontrado: " + address.toString());
+            Toast.makeText(this,"Localizado",Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void pegaPermissoes(){
@@ -118,13 +169,20 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
         //PEGA A LOCALIZAÇÃO DO USUÁRIO - Em contrução
         if(permissoesDadas){
             Toast.makeText(Map_activity.this,"Meu Local",Toast.LENGTH_SHORT);
+            pegaLocalDisp();
 
             if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
                     && ActivityCompat.checkSelfPermission(this,Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED){
                 return;
             }
-            pegaLocalDisp();
+
+            // ADD O PONTO AZUL ONDE O USUÁRIO ESTÁ
             mMap.setMyLocationEnabled(true);
+            // ESCONDE A OPÇÃO DE CENTRALIZAR NA POSIÇÃO DO USUÁRIO
+            mMap.getUiSettings().setMyLocationButtonEnabled(false);
+
+            init();
+
         } else {
             // ADICIONA UM MARCADOR NA ETECIA E MOVE O MAPA
             LatLng etecia = new LatLng(-23.7049869, -46.6904032);
