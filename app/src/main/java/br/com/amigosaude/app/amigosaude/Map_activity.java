@@ -14,8 +14,11 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
@@ -52,12 +55,14 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
 
     //WIDGETS
     private EditText txt_MapBusca;
+    private ImageView mGps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.map_layout);
         txt_MapBusca = (EditText) findViewById(R.id.txt_busca);
+        mGps = (ImageView) findViewById(R.id.ic_gps);
 
         pegaPermissoes();
 
@@ -80,6 +85,14 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
                 return false;
             }
         });
+        mGps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d(TAG,"onClick mGps: clicou no ícone de localização");
+                pegaLocalDisp();
+            }
+        });
+        recolheTeclado();
     }
 
     public void geoLocalizacao(){
@@ -99,6 +112,8 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
 
             Log.d(TAG,"geoLocalizacao: Encontrado: " + address.toString());
             Toast.makeText(this,"Localizado",Toast.LENGTH_SHORT).show();
+
+            moveCamera(new LatLng(address.getLatitude(), address.getLongitude()),ZOOM_PADRAO,address.getAddressLine(0));
         }
     }
 
@@ -187,7 +202,7 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
             // ADICIONA UM MARCADOR NA ETECIA E MOVE O MAPA
             LatLng etecia = new LatLng(-23.7049869, -46.6904032);
             mMap.addMarker(new MarkerOptions().position(etecia).title("ETECIA"));
-            moveCamera(etecia,ZOOM_PADRAO);
+            moveCamera(etecia,ZOOM_PADRAO,"EtecIA");
         }
 
 
@@ -207,7 +222,7 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
                             Log.d(TAG,"onComplete: Localização atual encontrada");
                             Location localAtual = (Location) task.getResult();
 
-                            moveCamera(new LatLng(localAtual.getLatitude(),localAtual.getLongitude()),ZOOM_PADRAO);
+                            moveCamera(new LatLng(localAtual.getLatitude(),localAtual.getLongitude()),ZOOM_PADRAO,"Minha Localização");
                         }else {
                             Log.d(TAG,"onComplete: Localização atual NÂO encontrada");
                             Toast.makeText(Map_activity.this,"Local atual indisponível",Toast.LENGTH_SHORT).show();
@@ -223,9 +238,15 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
-    private void moveCamera(LatLng latLng, float zoom){
+    private void moveCamera(LatLng latLng, float zoom, String titulo){
         Log.d(TAG,"moveCamera: movendo a camera para LAT"+latLng.latitude+", LNG: "+latLng.longitude);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
+
+        if(!titulo.equals("Minha Localização")){
+            MarkerOptions options = new MarkerOptions().position(latLng).title(titulo);
+            mMap.addMarker(options);
+        }
+        recolheTeclado();
     }
 
     @Override
@@ -245,5 +266,9 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
                 }
             }
         }
+    }
+
+    private void recolheTeclado(){
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
 }
