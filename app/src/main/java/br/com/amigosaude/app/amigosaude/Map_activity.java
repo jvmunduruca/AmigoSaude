@@ -98,7 +98,8 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
     public void geoLocalizacao(){
         Log.d(TAG,"geoLocalizacao: Localizando");
 
-        String stringBusca = txt_MapBusca.getText().toString();
+        String stringBusca = String.valueOf(txt_MapBusca.getText());
+        Toast.makeText(this,"Buscar: "+ stringBusca,Toast.LENGTH_SHORT);
 
         Geocoder geocoder = new Geocoder(Map_activity.this);
         List<Address> list = new ArrayList<>();
@@ -183,7 +184,6 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
 
         //PEGA A LOCALIZAÇÃO DO USUÁRIO - Em contrução
         if(permissoesDadas){
-            Toast.makeText(Map_activity.this,"Meu Local",Toast.LENGTH_SHORT);
             pegaLocalDisp();
 
             if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
@@ -199,10 +199,7 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
             init();
 
         } else {
-            // ADICIONA UM MARCADOR NA ETECIA E MOVE O MAPA
-            LatLng etecia = new LatLng(-23.7049869, -46.6904032);
-            mMap.addMarker(new MarkerOptions().position(etecia).title("ETECIA"));
-            moveCamera(etecia,ZOOM_PADRAO,"EtecIA");
+            Toast.makeText(Map_activity.this,"Não foi possível localizar",Toast.LENGTH_SHORT);
         }
 
 
@@ -245,6 +242,7 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
         if(!titulo.equals("Minha Localização")){
             MarkerOptions options = new MarkerOptions().position(latLng).title(titulo);
             mMap.addMarker(options);
+
         }
         recolheTeclado();
     }
