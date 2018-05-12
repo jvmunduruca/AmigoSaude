@@ -34,7 +34,7 @@
             android:layout_toRightOf="@+id/ic_lupa"
             android:layout_centerVertical="true"
             android:textSize="20sp"
-            android:textColor="#000"
+            android:textColor="@color/colorPrimaryDark"
             android:id="@+id/txt_busca"
             android:background="@null"
             android:hint="Faça sua busca"
