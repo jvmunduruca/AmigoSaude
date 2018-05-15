@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SelUnidade_Activity">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:stretchColumns="0,1"
+        >
+        <TableRow>
+            <Button
+                android:id="@+id/prontos_socorros"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Prontos Socorros"
+                android:background="@color/colorAccent"
+                android:textColor="#FFF"
+                android:layout_marginBottom="10dp"
+                android:onClick="prontosSocorros"/>
+        </TableRow>
+
+
+        <TableRow>
+            <Button
+                android:id="@+id/AMAs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AMAs"
+                android:background="@color/colorAccent"
+                android:layout_marginBottom="10dp"
+                android:textColor="#FFF"
+                android:onClick="amas"
+                />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>
