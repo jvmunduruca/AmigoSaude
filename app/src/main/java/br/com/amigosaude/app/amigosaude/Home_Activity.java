@@ -15,12 +15,10 @@ public class Home_Activity extends AppCompatActivity {
 
     public void postos(View view) {
         startActivity(new Intent(getBaseContext(), SelUnidade_Activity.class));
-        finish();
     }
 
     public void emergencia(View view) {
         startActivity(new Intent(getBaseContext(), Tel_Activity.class));
-        finish();
     }
 
 }
