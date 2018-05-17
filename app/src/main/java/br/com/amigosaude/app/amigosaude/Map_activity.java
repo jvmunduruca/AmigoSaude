@@ -92,7 +92,6 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
                 pegaLocalDisp();
             }
         });
-        recolheTeclado();
     }
 
     public void geoLocalizacao(){
@@ -244,7 +243,7 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
             mMap.addMarker(options);
 
         }
-        recolheTeclado();
+
     }
 
     @Override
@@ -265,8 +264,6 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
             }
         }
     }
-
-    private void recolheTeclado(){
-        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
-}
+
+
