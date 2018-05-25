@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,45 +7,13 @@
     android:orientation="vertical"
     tools:context=".Tel_Activity">
 
-    <LinearLayout
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/opcaoTelefone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="10dp"
-        android:stretchColumns="0,1"
-        android:background="@color/colorAccentWeak">
-        <RelativeLayout
-            android:id="@+id/opcaoTelefone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:padding="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:elevation="10dp"
-            android:background="@drawable/white_border"
-            android:onClick="ligar192"
-            >
+        >
 
-            <ImageView
-                android:id="@+id/icone_bombeiro"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/icone_socorro" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:paddingLeft="10dp"
-                android:layout_toRightOf="@id/icone_bombeiro"
-                android:layout_centerVertical="true"
-                android:text="192"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="bold"
 
-                />
-        </RelativeLayout>
-    </LinearLayout>
+    </android.support.v7.widget.RecyclerView>
 
-</LinearLayout>
+</RelativeLayout>

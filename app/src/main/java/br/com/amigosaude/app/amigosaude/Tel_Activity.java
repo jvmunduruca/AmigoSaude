@@ -7,14 +7,67 @@ import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Tel_Activity extends AppCompatActivity {
+
+    RecyclerView mRecyclerView;
+    Tel_Card telCard;
+
+    List<Tel> listaTel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tel_layout);
+
+        listaTel = new ArrayList<>();
+
+        mRecyclerView = (RecyclerView) findViewById(R.id.opcaoTelefone);
+        mRecyclerView.setHasFixedSize(true);
+
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        listaTel.add(
+                new Tel(
+                        1,
+                        "Policia Militar",
+                        "190",
+                        R.drawable.icone_socorro
+                )
+        );
+        listaTel.add(
+                new Tel(
+                        1,
+                        "Ambulância",
+                        "192",
+                        R.drawable.icone_socorro
+                )
+        );
+        listaTel.add(
+                new Tel(
+                        1,
+                        "Corpo de Bombeiros",
+                        "193",
+                        R.drawable.icone_socorro
+                )
+        );
+        listaTel.add(
+                new Tel(
+                        1,
+                        "Defesa Civil",
+                        "199",
+                        R.drawable.icone_socorro
+                )
+        );
+
+        telCard = new Tel_Card(this,listaTel);
+        mRecyclerView.setAdapter(telCard);
     }
 
     public void ligar192(View view) {
