@@ -71,7 +71,7 @@ public class Tel_Activity extends AppCompatActivity {
     }
 
     public void ligar192(View view) {
-        String uri = "tel:" + "192"; // aqui, óbvio, o número para o qual deseja ligar.
+        String uri = "tel:" + "192"; // Ver forma de pegar numero do item da lista
         Intent intent = new Intent(Intent.ACTION_CALL);
         intent.setData(Uri.parse(uri));
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {

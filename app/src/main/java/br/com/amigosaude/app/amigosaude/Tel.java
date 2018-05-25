@@ -10,6 +10,7 @@ public class Tel {
         this.descricao = descricao;
         this.telefone = telefone;
         this.image = image;
+
     }
 
     public int getId() {
