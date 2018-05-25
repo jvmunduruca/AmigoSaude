@@ -15,6 +15,5 @@ public class PS_activity extends AppCompatActivity {
 
     public void InformaUnidade(View view) {
         startActivity(new Intent(getBaseContext(), Map_activity.class));
-        finish();
     }
 }

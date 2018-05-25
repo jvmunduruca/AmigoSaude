@@ -15,11 +15,9 @@ public class SelUnidade_Activity extends AppCompatActivity {
 
     public void prontosSocorros(View view) {
         startActivity(new Intent(getBaseContext(), PS_activity.class));
-        finish();
     }
 
     public void amas(View view) {
         startActivity(new Intent(getBaseContext(), Amas_Activity.class));
-        finish();
     }
 }
