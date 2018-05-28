@@ -1,24 +1,19 @@
 package br.com.amigosaude.app.amigosaude;
 
-import android.Manifest;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Tel_Activity extends AppCompatActivity {
 
-    RecyclerView mRecyclerView;
-    Tel_Card telCard;
+    private static final String TAG = "Tel_Activity";
 
+    Tel_Card telCard;
     List<Tel> listaTel;
 
     @Override
@@ -26,12 +21,12 @@ public class Tel_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tel_layout);
 
+        initLista();
+    }
+
+    private void initLista(){
+        Log.d(TAG,"initLista");
         listaTel = new ArrayList<>();
-
-        mRecyclerView = (RecyclerView) findViewById(R.id.opcaoTelefone);
-        mRecyclerView.setHasFixedSize(true);
-
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         listaTel.add(
                 new Tel(
@@ -66,24 +61,17 @@ public class Tel_Activity extends AppCompatActivity {
                 )
         );
 
-        telCard = new Tel_Card(this,listaTel);
-        mRecyclerView.setAdapter(telCard);
+        initTelCard();
     }
 
-    public void ligar192(View view) {
-        String uri = "tel:" + "192"; // Ver forma de pegar numero do item da lista
-        Intent intent = new Intent(Intent.ACTION_CALL);
-        intent.setData(Uri.parse(uri));
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
-        startActivity(intent);
+    private void initTelCard(){
+        Log.d(TAG,"initTelCard");
+        RecyclerView mRecyclerView = findViewById(R.id.opcaoTelefone);
+        Tel_Card novoTelCard = new Tel_Card(this,listaTel);
+        mRecyclerView.setAdapter(novoTelCard);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setHasFixedSize(true);
+        // Codding With Mitch
     }
+
 }
