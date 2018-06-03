@@ -8,52 +8,65 @@
     tools:context=".Home_Activity">
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:stretchColumns="0,1"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         >
-
         <TableRow>
             <ImageView
                 android:id="@+id/logo"
                 android:layout_height="100dp"
                 android:layout_width="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="20dp"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
                 android:src="@drawable/amigosaude_logo"/>
         </TableRow>
-
-
-
+        <TableRow>
+            <ImageView
+                android:id="@+id/PostosImg"
+                android:layout_height="100dp"
+                android:layout_width="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:src="@drawable/icone_socorro"/>
+        </TableRow>
         <TableRow>
             <Button
                 android:id="@+id/postos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="20dp"
                 android:background="@color/colorAccent"
                 android:onClick="postos"
                 android:text="@string/unidades_de_saude"
                 android:textColor="#FFF" />
         </TableRow>
-
-
+        <TableRow>
+            <ImageView
+                android:id="@+id/EmergenciaImg"
+                android:layout_height="100dp"
+                android:layout_width="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:src="@drawable/icone_socorro"/>
+        </TableRow>
         <TableRow >
             <Button
                 android:id="@+id/emergencia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="20dp"
                 android:background="@color/colorAccent"
                 android:onClick="emergencia"
                 android:text="@string/emergencia"
                 android:textColor="#FFF" />
         </TableRow>
-
-
     </TableLayout>
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="Etecia - 2018"/>
 </LinearLayout>

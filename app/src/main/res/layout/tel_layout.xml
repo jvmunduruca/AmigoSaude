@@ -5,14 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorAccentWeak"
+    android:background="@color/colorAccent"
     tools:context=".Tel_Activity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/opcaoTelefone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp"
         >
 
 
