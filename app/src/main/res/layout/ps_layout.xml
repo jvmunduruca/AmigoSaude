@@ -1,79 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PS_activity">
-    <LinearLayout
+    android:orientation="vertical"
+    tools:context=".PS_activity"
+    android:background="@color/colorAccent"
+    android:padding="15dp"
+    >
+
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:layout_height="wrap_content"
+        android:id="@+id/UnidadeSaude">
 
-        //Pronto socorro santa casa
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/colorAccent"
-            android:elevation="10dp"
-            android:padding="10dp"
-            android:layout_gravity="center_vertical"
-            android:onClick="InformaUnidade">
-
-            <ImageView
-                android:id="@+id/IconePSSantaCasa"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/prontosocorrosantacasa"
-                />
-
-            <TextView
-                android:padding="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/IconePSSantaCasa"
-                android:gravity="center"
-                android:text="Hospital Santa Casa de Santo Amaro"
-                />
-
-        </RelativeLayout>
+    </android.support.v7.widget.RecyclerView>
 
 
-
-        //PS/ Hospital Regional Sul
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/colorAccent"
-            android:elevation="10dp"
-            android:padding="10dp">
-
-            <ImageView
-                android:id="@+id/IconePSHospitalEstadualRS"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/icone_socorro" />
-
-            <TextView
-                android:padding="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/IconePSHospitalEstadualRS"
-                android:gravity="center"
-                android:text="Pronto Socorro Hospital Regional Sul" />
-
-        </RelativeLayout>
-
-
-
-
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>
