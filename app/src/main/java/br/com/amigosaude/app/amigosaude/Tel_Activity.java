@@ -13,7 +13,7 @@ public class Tel_Activity extends AppCompatActivity {
 
     private static final String TAG = "Tel_Activity";
 
-    Tel_Card telCard;
+    Tel_CardAdapter telCard;
     List<Tel> listaTel;
 
     @Override
@@ -67,7 +67,7 @@ public class Tel_Activity extends AppCompatActivity {
     private void initTelCard(){
         Log.d(TAG,"initTelCard");
         RecyclerView mRecyclerView = findViewById(R.id.opcaoTelefone);
-        Tel_Card novoTelCard = new Tel_Card(this,listaTel);
+        Tel_CardAdapter novoTelCard = new Tel_CardAdapter(this,listaTel);
         mRecyclerView.setAdapter(novoTelCard);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setHasFixedSize(true);
