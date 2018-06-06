@@ -16,18 +16,17 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
-public class Tel_Card extends RecyclerView.Adapter<Tel_Card.ViewHolder>{
+public class Tel_CardAdapter extends RecyclerView.Adapter<Tel_CardAdapter.ViewHolder>{
 
-    private static final String TAG = "Tel_Card";
+    private static final String TAG = "Tel_CardAdapter";
 
     private Context mCtx;
     private List<Tel> telList;
 
-    public Tel_Card(Context mCtx, List<Tel> telList) {
+    public Tel_CardAdapter(Context mCtx, List<Tel> telList) {
         this.mCtx = mCtx;
         this.telList = telList;
     }
