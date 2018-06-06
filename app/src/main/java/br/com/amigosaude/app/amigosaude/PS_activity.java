@@ -21,7 +21,6 @@ public class PS_activity extends AppCompatActivity {
     //variaveis
     Ps_CardAdapter PsCard;
     List<Ps> listaPS;
-    TextView Unid;
 
 
     @Override
@@ -40,6 +39,7 @@ public class PS_activity extends AppCompatActivity {
 
         listaPS.add(
                 new Ps(
+                        // COLOCAR UM ID NA CLASSE PS E ATUALIZAR CONSTRUTOR
                         R.drawable.icone_socorro,
                         "Pronto Socorro Municipal Santo Amaro",
                         "Rua tal, 50"
@@ -67,16 +67,5 @@ public class PS_activity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
-
-        Unid = (TextView)findViewById(R.id.ps_nome);
-    }
-
-    public void InformaUnidade(View view) {
-
-        String ps_unid = Unid.getText().toString();
-        Intent intent = new Intent (getApplicationContext(), Map_activity.class);
-        intent.putExtra("unid", ps_unid);
-        startActivity(intent);
-
     }
 }

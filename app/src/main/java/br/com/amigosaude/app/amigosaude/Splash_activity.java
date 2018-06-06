@@ -22,7 +22,7 @@ public class Splash_activity extends AppCompatActivity{
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        // INICIA O MAPA APOS 5 SEGUNDOS
+        // INICIA APOS 5 SEGUNDOS
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {

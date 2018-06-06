@@ -38,12 +38,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Map_activity" />
-        <activity android:name=".Tel_Activity" />
         <activity android:name=".Home_Activity" />
-        <activity android:name=".SelUnidade_Activity" />
+        <activity android:name=".Map_activity" />
         <activity android:name=".PS_activity" />
-        <activity android:name=".Amas_Activity"></activity>
+        <activity android:name=".SelUnidade_Activity" />
+        <activity android:name=".Tel_Activity" />
+
     </application>
 
 </manifest>

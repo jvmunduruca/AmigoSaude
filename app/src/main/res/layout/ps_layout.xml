@@ -6,7 +6,6 @@
     android:orientation="vertical"
     tools:context=".PS_activity"
     android:background="@color/colorAccent"
-    android:padding="15dp"
     >
 
     <android.support.v7.widget.RecyclerView

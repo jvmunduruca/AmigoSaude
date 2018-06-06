@@ -13,7 +13,7 @@ public class Tel_Activity extends AppCompatActivity {
 
     private static final String TAG = "Tel_Activity";
 
-    Tel_CardAdapter telCard;
+
     List<Tel> listaTel;
 
     @Override
