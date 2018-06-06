@@ -7,6 +7,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +21,8 @@ public class PS_activity extends AppCompatActivity {
     //variaveis
     Ps_CardAdapter PsCard;
     List<Ps> listaPS;
+    TextView Unid;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +41,7 @@ public class PS_activity extends AppCompatActivity {
         listaPS.add(
                 new Ps(
                         R.drawable.icone_socorro,
-                        "Hospital Grajaú",
+                        "Pronto Socorro Municipal Santo Amaro",
                         "Rua tal, 50"
                         )
         );
@@ -46,7 +51,11 @@ public class PS_activity extends AppCompatActivity {
                         "UBS Socorro",
                         "Rua aquela, 20"
                 )
+
+
         );
+
+
 
         initPsCard();
     }
@@ -59,11 +68,15 @@ public class PS_activity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
-
+        Unid = (TextView)findViewById(R.id.ps_nome);
     }
 
     public void InformaUnidade(View view) {
-        startActivity(new Intent(getBaseContext(), Map_activity.class));
+
+        String ps_unid = Unid.getText().toString();
+        Intent intent = new Intent (getApplicationContext(), Map_activity.class);
+        intent.putExtra("unid", ps_unid);
+        startActivity(intent);
 
     }
 }
