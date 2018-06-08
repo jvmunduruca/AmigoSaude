@@ -19,7 +19,6 @@ public class PS_activity extends AppCompatActivity {
     private static final String TAG = "PS_activity";
 
     //variaveis
-    Ps_CardAdapter PsCard;
     List<Ps> listaPS;
 
 
@@ -39,7 +38,7 @@ public class PS_activity extends AppCompatActivity {
 
         listaPS.add(
                 new Ps(
-                        // COLOCAR UM ID NA CLASSE PS E ATUALIZAR CONSTRUTOR
+                        1,
                         R.drawable.icone_socorro,
                         "Pronto Socorro Municipal Santo Amaro",
                         "Rua tal, 50"
@@ -47,6 +46,7 @@ public class PS_activity extends AppCompatActivity {
         );
         listaPS.add(
                 new Ps(
+                        2,
                         R.drawable.icone_socorro,
                         "UBS Socorro",
                         "Rua aquela, 20"

@@ -6,13 +6,22 @@ package br.com.amigosaude.app.amigosaude;
 
 public class Ps {
 
-    private int image;
+    private int id, image;
     private String nome,endereco;
 
-    public Ps(int image, String nome, String endereco) {
+    public Ps(int  id, int image, String nome, String endereco) {
+        this.id = id;
         this.image = image;
         this.nome = nome;
         this.endereco = endereco;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {
