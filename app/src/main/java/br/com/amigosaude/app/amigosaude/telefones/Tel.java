@@ -1,4 +1,4 @@
-package br.com.amigosaude.app.amigosaude;
+package br.com.amigosaude.app.amigosaude.telefones;
 
 import android.Manifest;
 import android.content.Intent;

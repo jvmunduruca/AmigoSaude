@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PS_activity"
+    tools:context=".unidades_de_saude.prontos_socorros.PS_activity"
     android:background="@color/colorAccent"
     >
 

@@ -1,4 +1,4 @@
-package br.com.amigosaude.app.amigosaude;
+package br.com.amigosaude.app.amigosaude.unidades_de_saude.prontos_socorros;
 
 /**
  * Created by LAB on 05/06/2018.
@@ -7,13 +7,14 @@ package br.com.amigosaude.app.amigosaude;
 public class Ps {
 
     private int id, image;
-    private String nome,endereco;
+    private String nome,endereco,telefones;
 
-    public Ps(int  id, int image, String nome, String endereco) {
+    public Ps(int  id, int image, String nome, String endereco, String telefones) {
         this.id = id;
         this.image = image;
         this.nome = nome;
         this.endereco = endereco;
+        this.telefones = telefones;
     }
 
     public int getId() {
@@ -46,5 +47,13 @@ public class Ps {
 
     public void setImage(int image) {
         this.image = image;
+    }
+
+    public String getTelefones() {
+        return telefones;
+    }
+
+    public void setTelefones(String telefones) {
+        this.telefones = telefones;
     }
 }

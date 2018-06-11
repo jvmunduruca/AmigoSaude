@@ -1,4 +1,4 @@
-package br.com.amigosaude.app.amigosaude;
+package br.com.amigosaude.app.amigosaude.telefones;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import br.com.amigosaude.app.amigosaude.R;
 
 public class Tel_Activity extends AppCompatActivity {
 

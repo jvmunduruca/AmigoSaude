@@ -1,4 +1,4 @@
-package br.com.amigosaude.app.amigosaude;
+package br.com.amigosaude.app.amigosaude.telefones;
 
 import android.Manifest;
 import android.content.Context;
@@ -17,6 +17,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.List;
+
+import br.com.amigosaude.app.amigosaude.R;
 
 
 public class Tel_CardAdapter extends RecyclerView.Adapter<Tel_CardAdapter.ViewHolder>{

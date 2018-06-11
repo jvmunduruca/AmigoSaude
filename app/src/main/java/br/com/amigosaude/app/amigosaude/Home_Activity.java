@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import br.com.amigosaude.app.amigosaude.telefones.Tel_Activity;
+
 public class Home_Activity extends AppCompatActivity {
 
     @Override

@@ -1,4 +1,4 @@
-package br.com.amigosaude.app.amigosaude;
+package br.com.amigosaude.app.amigosaude.unidades_de_saude.prontos_socorros;
 
 import android.support.v7.widget.RecyclerView;
 import android.content.Context;
@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.*;
 
 import java.util.ArrayList;
+
+import br.com.amigosaude.app.amigosaude.R;
 
 /**
  * Created by LAB on 05/06/2018.

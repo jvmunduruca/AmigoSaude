@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorAccent"
-    tools:context=".Tel_Activity">
+    tools:context=".telefones.Tel_Activity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/opcaoTelefone"
