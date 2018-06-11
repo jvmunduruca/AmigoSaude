@@ -1,5 +1,6 @@
 package br.com.amigosaude.app.amigosaude.unidades_de_saude.prontos_socorros;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -38,8 +39,7 @@ public class PS_activity extends AppCompatActivity {
                         1,
                         R.drawable.icone_socorro,
                         "Pronto Socorro Municipal Santo Amaro",
-                        "Avenida Adolfo Pinheiro, 805. CEP: 4733100",
-                        "5523-1777"
+                        "Avenida Adolfo Pinheiro, 805. CEP: 4733100"
                         )
         );
 
@@ -48,8 +48,7 @@ public class PS_activity extends AppCompatActivity {
                         2,
                         R.drawable.icone_socorro,
                         "Pronto Socorro Hospital Santa Casa de Santo Amaro",
-                        "Rua Isabel Schimdt, 59. CEP: 4743030",
-                        "5525-8700"
+                        "Rua Isabel Schimdt, 59. CEP: 4743030"
                 )
         );
 
@@ -58,8 +57,7 @@ public class PS_activity extends AppCompatActivity {
                         2,
                         R.drawable.icone_socorro,
                         "PS/Hospital Estadual Regional Sul",
-                        "Rua General Roberto Alves de Carvalho Filho, 270. CEP: 4744000 ",
-                        "5694-8200"
+                        "Rua General Roberto Alves de Carvalho Filho, 270. CEP: 4744000 "
                 )
 
         );

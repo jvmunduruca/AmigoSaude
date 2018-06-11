@@ -22,9 +22,12 @@ public class Ps_CardAdapter extends RecyclerView.Adapter<Ps_CardAdapter.ViewHold
     private Context mContext;
     private ArrayList<Ps> Postos;
 
+
+
     public Ps_CardAdapter(Context mContext, ArrayList<Ps> postos) {
         this.mContext = mContext;
         this.Postos = postos;
+
     }
 
     @Override

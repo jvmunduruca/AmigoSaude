@@ -7,14 +7,13 @@ package br.com.amigosaude.app.amigosaude.unidades_de_saude.prontos_socorros;
 public class Ps {
 
     private int id, image;
-    private String nome,endereco,telefones;
+    private String nome,endereco;
 
-    public Ps(int  id, int image, String nome, String endereco, String telefones) {
+    public Ps(int  id, int image, String nome, String endereco) {
         this.id = id;
         this.image = image;
         this.nome = nome;
         this.endereco = endereco;
-        this.telefones = telefones;
     }
 
     public int getId() {
@@ -47,13 +46,5 @@ public class Ps {
 
     public void setImage(int image) {
         this.image = image;
-    }
-
-    public String getTelefones() {
-        return telefones;
-    }
-
-    public void setTelefones(String telefones) {
-        this.telefones = telefones;
     }
 }
