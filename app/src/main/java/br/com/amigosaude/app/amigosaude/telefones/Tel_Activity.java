@@ -35,7 +35,7 @@ public class Tel_Activity extends AppCompatActivity {
                         1,
                         "Policia Militar",
                         "190",
-                        R.drawable.icone_socorro
+                        R.drawable.img_policia
                 )
         );
         listaTel.add(
@@ -43,7 +43,7 @@ public class Tel_Activity extends AppCompatActivity {
                         1,
                         "Ambulância",
                         "192",
-                        R.drawable.icone_socorro
+                        R.drawable.img_ambulancia
                 )
         );
         listaTel.add(
@@ -51,7 +51,7 @@ public class Tel_Activity extends AppCompatActivity {
                         1,
                         "Corpo de Bombeiros",
                         "193",
-                        R.drawable.icone_socorro
+                        R.drawable.img_bombeiros
                 )
         );
         listaTel.add(
@@ -59,7 +59,7 @@ public class Tel_Activity extends AppCompatActivity {
                         1,
                         "Defesa Civil",
                         "199",
-                        R.drawable.icone_socorro
+                        R.drawable.img_defesacivil
                 )
         );
 
