@@ -40,7 +40,7 @@
         </activity>
         <activity android:name=".Home_Activity" />
         <activity android:name=".Map_activity" />
-        <activity android:name=".unidades_de_saude.prontos_socorros.PS_activity" />
+        <activity android:name=".PS_activity" />
         <activity android:name=".SelUnidade_Activity" />
         <activity android:name=".telefones.Tel_Activity" />
 
