@@ -5,14 +5,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".PS_activity"
-    android:background="@color/colorAccent"
+    android:background="#fff"
     >
 // ITEM 1
     <RelativeLayout
         android:id="@+id/UnidadeSantaCasa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/white_border"
+        android:background="@color/colorAccent"
         android:layout_margin="5dp"
         android:padding="5dp">
 
@@ -35,7 +35,6 @@
             android:text="Santa Casa de Santo Amaro"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold"
-            android:background="@drawable/green_border"
             />
 
         <TextView
@@ -57,7 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/UnidadeSantaCasa"
-        android:background="@drawable/white_border"
+        android:background="@color/colorAccent"
         android:layout_margin="5dp"
         android:padding="5dp">
 
@@ -77,10 +76,9 @@
             android:paddingLeft="10dp"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@id/img_munSA"
-            android:text="Santa Casa de Santo Amaro"
+            android:text="P.S. Municipal de Santo Amaro"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold"
-            android:background="@drawable/green_border"
             />
 
         <TextView
@@ -93,7 +91,7 @@
             android:paddingLeft="10dp"
             android:layout_centerVertical="true"
             android:gravity="bottom"
-            android:text="Rua Isabel Schimdt, 59."
+            android:text="Av. Adolfo Pinheiro, 805"
             />
     </RelativeLayout>
 
