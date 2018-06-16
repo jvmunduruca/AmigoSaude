@@ -5,4 +5,5 @@
     <color name="colorAccent">#03a87a</color>
     <color name="colorAccentClear">#53d668</color>
     <color name="colorAccentWeak">#c6d653</color>
+    <color name="cardColor">#fff</color>
 </resources>

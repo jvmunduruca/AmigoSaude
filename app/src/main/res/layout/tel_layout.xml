@@ -8,13 +8,35 @@
     android:background="@color/colorAccent"
     tools:context=".telefones.Tel_Activity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/opcaoTelefone"
+    <ImageView
+        android:id="@+id/icone"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/icone_socorro"
+        />
+    <TextView
+        android:id="@+id/tel_descricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:paddingLeft="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/icone"
+        android:text="SAMU"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
+        android:background="@drawable/green_border"
+        />
+    <TextView
+        android:id="@+id/tel_numero"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
-
-
-    </android.support.v7.widget.RecyclerView>
+        android:layout_alignBottom="@id/tel_descricao"
+        android:layout_toRightOf="@id/icone"
+        android:paddingLeft="20dp"
+        android:layout_centerVertical="true"
+        android:gravity="bottom"
+        android:text="192"/>
 
 </RelativeLayout>
