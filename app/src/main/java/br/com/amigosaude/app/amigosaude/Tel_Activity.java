@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,5 +26,6 @@ public class Tel_Activity extends AppCompatActivity {
 
     public void ligar(View view) {
         Log.d(TAG, "ligar: Clicado!");
+        Toast.makeText(this,"Modo de teste // Ligação não permitida", Toast.LENGTH_SHORT).show();
     }
 }
