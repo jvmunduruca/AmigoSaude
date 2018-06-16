@@ -14,7 +14,7 @@ public class SelUnidade_Activity extends AppCompatActivity {
     }
 
     public void amas(View view) {
-        startActivity(new Intent(this,PS_activity.class));
+        startActivity(new Intent(getBaseContext(),Amas_Activity.class));
 
     }
 
