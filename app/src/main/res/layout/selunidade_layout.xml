@@ -38,6 +38,20 @@
 
                 />
         </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/UBS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="UBS"
+                android:background="@drawable/green_border"
+                android:layout_marginBottom="10dp"
+                android:textColor="#FFF"
+                android:onClick="ubs"
+
+                />
+        </TableRow>
     </TableLayout>
 
 </LinearLayout>
