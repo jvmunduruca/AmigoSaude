@@ -3,6 +3,7 @@ package br.com.amigosaude.app.amigosaude;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -63,6 +64,11 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
         setContentView(R.layout.map_layout);
         txt_MapBusca = (EditText) findViewById(R.id.txt_busca);
         mGps = (ImageView) findViewById(R.id.ic_gps);
+
+        Intent intent = getIntent();
+        String Unid = intent.getStringExtra("Unid");
+
+        txt_MapBusca.setText(Unid);
 
         pegaPermissoes();
 

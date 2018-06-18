@@ -12,6 +12,7 @@ public class Ubs_Activiy extends AppCompatActivity {
     //variaveis
     TextView tv;
     RelativeLayout Unid;
+    String unid = tv.getText().toString();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,6 @@ public class Ubs_Activiy extends AppCompatActivity {
         Unid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String unid = tv.getText().toString();
                 Intent i = new Intent(getApplicationContext(), Map_activity.class);
                 i.putExtra("unid", unid);
                 startActivity(i);
