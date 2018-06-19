@@ -5,14 +5,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".PS_activity"
-    android:background="#fff"
+    android:background="@color/colorAccentClear"
     >
 // ITEM 1
     <RelativeLayout
-        android:id="@+id/UnidadeSantaCasa"
+        android:id="@+id/item1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
+        android:background="@drawable/white_border"
         android:layout_margin="5dp"
         android:padding="5dp">
 
@@ -21,80 +21,197 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_centerVertical="true"
-            android:src="@drawable/prontosocorrosantacasa"
-            />
+            android:src="@drawable/ps_santacasa"
+            android:layout_alignParentTop="true"
 
-        <TextView
-            android:id="@+id/ps_SantaCasa"
+            />
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:paddingLeft="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/img"
-            android:text="Santa Casa de Santo Amaro"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textStyle="bold"
-            />
+            android:layout_toEndOf="@id/img"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tipo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_border"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:text="Pronto Socorro/ Hospital"
+                android:textColor="#fff"
+                />
+            <TextView
+                android:id="@+id/titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_border"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:text="Santa Casa de Santo Amaro"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                />
+            <TextView
+                android:id="@+id/endereco"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="Rua Isabel Schimdt, 59"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/telefone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="5525-8700"
+                />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/ps_endereco"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignBottom="@id/ps_SantaCasa"
-            android:layout_toRightOf="@id/img"
-            android:layout_marginLeft="10dp"
-            android:paddingLeft="10dp"
-            android:layout_centerVertical="true"
-            android:gravity="bottom"
-            android:text="Rua Isabel Schimdt, 59."
-            />
+
     </RelativeLayout>
+
 // ITEM 2
     <RelativeLayout
-        android:id="@+id/ps_municipalSA"
+        android:id="@+id/item2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/UnidadeSantaCasa"
-        android:background="@color/colorAccent"
+        android:background="@drawable/white_border"
         android:layout_margin="5dp"
-        android:padding="5dp"
-        >
+        android:padding="5dp">
 
         <ImageView
-            android:id="@+id/img_munSA"
+            android:id="@+id/img2"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_centerVertical="true"
-            android:src="@drawable/prontosocorrosantacasa"
-            />
+            android:src="@drawable/ps_regionalsul"
+            android:layout_alignParentTop="true"
 
-        <TextView
-            android:id="@+id/ps_MunSA"
+            />
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:paddingLeft="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/img_munSA"
-            android:text="P.S. Municipal de Santo Amaro"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textStyle="bold"
-            />
+            android:layout_toEndOf="@id/img2"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tipo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_border"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:text="Pronto Socorro/ Hospital"
+                android:textColor="#fff"
+                />
+            <TextView
+                android:id="@+id/titulo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_border"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:text="Regional Sul"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                />
+            <TextView
+                android:id="@+id/endereco2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="R. General Roberto Alves de Carvalho Filho, 270"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/telefone2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="5694-8200"
+                />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/ps_EndMunSA"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignBottom="@id/ps_MunSA"
-            android:layout_toRightOf="@id/img_munSA"
-            android:layout_marginLeft="10dp"
-            android:paddingLeft="10dp"
-            android:layout_centerVertical="true"
-            android:gravity="bottom"
-            android:text="Av. Adolfo Pinheiro, 805"
-            />
+
     </RelativeLayout>
 
+// ITEM 3
+    <RelativeLayout
+        android:id="@+id/item3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_border"
+        android:layout_margin="5dp"
+        android:padding="5dp">
 
+        <ImageView
+            android:id="@+id/img3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ps_munsantoamaro"
+            android:layout_alignParentTop="true"
+
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/img3"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tipo3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_border"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:text="Pronto Socorro/ Hospital"
+                android:textColor="#fff"
+                />
+            <TextView
+                android:id="@+id/titulo3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_border"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:text="Municipal de Santo Amaro"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                />
+            <TextView
+                android:id="@+id/endereco3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="Av. Adolfo Pinheiro, 805"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/telefone3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="5523-1777"
+                />
+        </LinearLayout>
+
+
+    </RelativeLayout>
 </LinearLayout>
+
