@@ -44,7 +44,7 @@
         <activity android:name=".PS_activity" />
         <activity android:name=".SelUnidade_Activity" />
         <activity android:name=".Tel_Activity" />
-        <activity android:name=".Ubs_Activiy"></activity>
+        <activity android:name=".Ubs_Activiy" />
     </application>
 
 </manifest>

@@ -12,7 +12,7 @@ public class Ubs_Activiy extends AppCompatActivity {
     //variaveis
     TextView tv;
     RelativeLayout Unid;
-    String unid = tv.getText().toString();
+    String unid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class Ubs_Activiy extends AppCompatActivity {
     public void informaUnidade1(View view) {
         tv = findViewById(R.id.jd_aeroporto_end);
         Unid = findViewById(R.id.unidade1);
-
+        unid = tv.getText().toString();
         Unid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

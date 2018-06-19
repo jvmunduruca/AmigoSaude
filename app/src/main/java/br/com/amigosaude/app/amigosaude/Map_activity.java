@@ -62,8 +62,8 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.map_layout);
-        txt_MapBusca = (EditText) findViewById(R.id.txt_busca);
-        mGps = (ImageView) findViewById(R.id.ic_gps);
+        txt_MapBusca = findViewById(R.id.txt_busca);
+        mGps = findViewById(R.id.ic_gps);
 
         Intent intent = getIntent();
         String Unid = intent.getStringExtra("Unid");
