@@ -1,9 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Amas_Activity">
+    android:orientation="vertical"
+    tools:context=".PS_activity"
+    android:background="@color/colorAccentClear"
+    >
+    // ITEM 1
+    <RelativeLayout
+        android:id="@+id/item1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_border"
+        android:layout_margin="5dp"
+        android:padding="5dp">
 
-</android.support.constraint.ConstraintLayout>
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ama_jdmiriam"
+            android:layout_alignParentTop="true"
+
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/img"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tipo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_border"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:text="AMA"
+                android:textColor="#fff"
+                />
+            <TextView
+                android:id="@+id/titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_border"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:text="Jardim Miriam"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                />
+            <TextView
+                android:id="@+id/endereco"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="Av. Santo Afonso, 419"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/telefone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="5622-7869"
+                />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    // ITEM 2
+    <RelativeLayout
+        android:id="@+id/item2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_border"
+        android:layout_margin="5dp"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/img2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ama_pedreira"
+            android:layout_alignParentTop="true"
+
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/img2"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tipo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_border"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:text="AMA"
+                android:textColor="#fff"
+                />
+            <TextView
+                android:id="@+id/titulo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_border"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:text="Pedreira (Dr. César Antunes da Rocha)"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                />
+            <TextView
+                android:id="@+id/endereco2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="Av. Nossa Senhora do Sabará, 4901"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/telefone2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="5611-8656"
+                />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    // ITEM 3
+    <RelativeLayout
+        android:id="@+id/item3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_border"
+        android:layout_margin="5dp"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/img3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ama_vlconstancia"
+            android:layout_alignParentTop="true"
+
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/img3"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tipo3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_border"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:text="AMA Especialidades"
+                android:textColor="#fff"
+                />
+            <TextView
+                android:id="@+id/titulo3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/green_border"
+                android:layout_marginBottom="5dp"
+                android:layout_marginStart="10dp"
+                android:padding="5dp"
+                android:text="Vila Constância"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                />
+            <TextView
+                android:id="@+id/endereco3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="R. Hermenegildo, SN"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/telefone3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="5562-6944"
+                />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</LinearLayout>
