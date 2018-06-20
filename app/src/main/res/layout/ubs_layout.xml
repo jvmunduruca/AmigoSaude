@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorAccent"
+    android:background="@color/colorAccentClear"
     tools:context=".Ubs_Activiy">
+
 
     //Item1
     <RelativeLayout
@@ -14,16 +15,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/white_border"
-        android:padding="10dp"
+        android:padding="5dp"
         android:layout_margin="5dp"
         android:onClick="informaUnidade1"
         >
         <ImageView
             android:id="@+id/icone1"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_centerVertical="true"
             android:src="@drawable/ubs_jardim_aeroporto"
+            android:layout_alignParentTop="true"
             />
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,42 +36,47 @@
                 android:id="@+id/ubs_jardim_aeroporto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:paddingLeft="10dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:padding="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_toRightOf="@id/icone1"
-                android:text="UBS Jardim Aeroporto - Dr. Massaki Udihara"
+                android:text="UBS Jardim Aeroporto"
+                android:textSize="15dp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="bold"
-                android:textSize="18sp"
                 android:background="@drawable/green_border"
-                android:textAlignment="center"
+                android:textColor="#fff"
                 />
+
             <TextView
-                android:id="@+id/jd_aeroporto_end"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/ubs_jardim_aeroporto"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="5dp"
+                android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/icone1"
-                android:paddingLeft="20dp"
-                android:layout_centerVertical="true"
-                android:gravity="center_horizontal"
+                android:layout_alignBottom="@id/ubs_jardim_aeroporto"
+                android:text="Dr. Massaki Udihara"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:background="@drawable/green_border"
+                android:textColor="#fff"/>
+            <TextView
+                android:id="@+id/endereco"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
                 android:text="R.Vieira de Moraes, 1752"
-                android:textSize="13sp"
                 android:textStyle="bold"
                 />
             <TextView
-                android:id="@+id/tel_jd_aeroporto"
+                android:id="@+id/telefone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_alignBottom="@id/jd_aeroporto_end"
-                android:layout_toRightOf="@id/icone1"
-                android:paddingLeft="20dp"
-                android:layout_centerVertical="true"
-                android:gravity="center_horizontal"
-                android:text="telefones: 5542-9672/5532-1152"
-                android:textSize="12sp"
-                android:textStyle="bold"/>
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="5542-9672/5532-1152"
+                />
         </LinearLayout>
     </RelativeLayout>
 
@@ -78,15 +85,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/white_border"
-        android:padding="10dp"
+        android:padding="5dp"
         android:layout_margin="5dp"
         >
         <ImageView
             android:id="@+id/icone2"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_centerVertical="true"
             android:src="@drawable/ubs_arriete"
+            android:layout_alignParentTop="true"
             />
         <LinearLayout
             android:layout_width="match_parent"
@@ -97,42 +105,48 @@
                 android:id="@+id/ubs_arriete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:paddingLeft="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@id/icone"
-                android:text="UBS Vila Arriete - Dr. Décio Pacheco Pedroso"
+                android:layout_marginBottom="5dp"
+                android:padding="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_toRightOf="@id/icone2"
+                android:text="UBS Vila Arriete"
+                android:textSize="15dp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="bold"
-                android:textSize="18sp"
                 android:background="@drawable/green_border"
-                android:textAlignment="center"
+                android:textColor="#fff"
                 />
+
             <TextView
-                android:id="@+id/arriete_end"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/ubs_arriete"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="5dp"
+                android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@id/icone1"
-                android:paddingLeft="20dp"
-                android:layout_centerVertical="true"
-                android:gravity="center_horizontal"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Dr. Décio Pacheco Pedroso"
+                android:textStyle="bold"
+                android:background="@drawable/green_border"
+                android:textColor="#fff"/>
+            <TextView
+                android:id="@+id/endereco2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_alignBottom="@id/ubs_arriete"
+                android:layout_toRightOf="@id/icone2"
                 android:text="R. Julieta de Araújo Almeida, 44"
-                android:textSize="13sp"
                 android:textStyle="bold"
                 />
             <TextView
-                android:id="@+id/tel_arriete"
+                android:id="@+id/telefone2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_alignBottom="@id/tel_descricao"
-                android:layout_toRightOf="@id/icone"
-                android:paddingLeft="20dp"
-                android:layout_centerVertical="true"
-                android:gravity="center_horizontal"
-                android:text="telefones: 5611-4046/5614-5595"
-                android:textSize="12sp"
-                android:textStyle="bold"/>
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="5542-9672/5532-1152"
+                />
         </LinearLayout>
     </RelativeLayout>
 
@@ -160,42 +174,183 @@
                 android:id="@+id/ubs_niteroi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:paddingLeft="10dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:padding="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_toRightOf="@id/icone3"
-                android:text="UBS Jardim Niterói"
+                android:text="UBS"
+                android:textSize="15dp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="bold"
-                android:textSize="18sp"
                 android:background="@drawable/green_border"
-                android:textAlignment="center"
+                android:textColor="#fff"
                 />
+
             <TextView
-                android:id="@+id/niteroi_end"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/ubs_niteroi"
-                android:layout_toRightOf="@id/icone3"
-                android:paddingLeft="20dp"
-                android:layout_centerVertical="true"
-                android:gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/icone1"
+                android:layout_alignBottom="@id/ubs_jardim_aeroporto"
+                android:text="Jardim Niterói"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:background="@drawable/green_border"
+                android:textColor="#fff"/>
+            <TextView
+                android:id="@+id/endereco3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
                 android:text="Rua Samuel Arnold, 596"
-                android:textSize="12sp"
                 android:textStyle="bold"
                 />
             <TextView
-                android:id="@+id/tel_niteroi"
+                android:id="@+id/telefone3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_alignBottom="@id/tel_descricao"
-                android:layout_toRightOf="@id/icone"
-                android:paddingLeft="20dp"
-                android:layout_centerVertical="true"
-                android:gravity="center_horizontal"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
                 android:text="telefones: 5611-0122/5611-0122"
-                android:textSize="12sp"
-                android:textStyle="bold"/>
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+    //Item 4
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_border"
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        >
+        <ImageView
+            android:id="@+id/icone4"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ubs_marpaulista"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/icone4"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/ubs_marpaulista"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:padding="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_toRightOf="@id/icone4"
+                android:text="UBS"
+                android:textSize="15dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:background="@drawable/green_border"
+                android:textColor="#fff"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/icone1"
+                android:layout_alignBottom="@id/ubs_marpaulista"
+                android:text="Mar Paulista"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:background="@drawable/green_border"
+                android:textColor="#fff"/>
+            <TextView
+                android:id="@+id/endereco4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="R. Matsuichi Wada, 393"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/telefone4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="5612-5686/5616-9406"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+    //Item 5
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_border"
+        android:padding="10dp"
+        android:layout_margin="5dp"
+        >
+        <ImageView
+            android:id="@+id/icone5"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ubs_umuarama"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/icone5"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/ubs_umuarama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:padding="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_toRightOf="@id/icone5"
+                android:text="UBS"
+                android:textSize="15dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:background="@drawable/green_border"
+                android:textColor="#fff"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/icone1"
+                android:layout_alignBottom="@id/ubs_jardim_aeroporto"
+                android:text="Jardim Umuarama"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"
+                android:background="@drawable/green_border"
+                android:textColor="#fff"/>
+            <TextView
+                android:id="@+id/endereco5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="Rua Samuel Arnold, 596"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/telefone5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="5563-9070/5566-1611"
+                />
         </LinearLayout>
     </RelativeLayout>
 </LinearLayout>

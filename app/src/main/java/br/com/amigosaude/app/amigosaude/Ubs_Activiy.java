@@ -21,7 +21,7 @@ public class Ubs_Activiy extends AppCompatActivity {
     }
 
     public void informaUnidade1(View view) {
-        tv = findViewById(R.id.jd_aeroporto_end);
+        tv = findViewById(R.id.endereco);
         Unid = findViewById(R.id.unidade1);
         unid = tv.getText().toString();
         Unid.setOnClickListener(new View.OnClickListener() {
