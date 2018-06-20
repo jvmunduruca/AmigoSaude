@@ -11,10 +11,6 @@ public class SelUnidade_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.selunidade_layout);
-    }
-
-    public void amas(View view) {
-        startActivity(new Intent(getBaseContext(),Amas_Activity.class));
 
     }
 
@@ -22,7 +18,12 @@ public class SelUnidade_Activity extends AppCompatActivity {
         startActivity(new Intent(getBaseContext(),PS_activity.class));
     }
 
+    public void amas(View view) {
+        startActivity(new Intent(getBaseContext(),Amas_Activity.class));
+
+    }
+
     public void ubs(View view) {
-        startActivity(new Intent(getBaseContext(), Ubs_Activiy.class));
+        startActivity(new Intent(getBaseContext(),Ubs_Activiy.class));
     }
 }
