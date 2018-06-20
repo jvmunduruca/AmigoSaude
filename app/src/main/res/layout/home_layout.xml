@@ -66,5 +66,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="Versão: 0.2 - Etecia - 2018"/>
+        android:text="Versão: 0.3 - Etecia - 2018"/>
 </LinearLayout>
