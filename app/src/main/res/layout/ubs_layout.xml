@@ -7,7 +7,6 @@
     android:background="@color/colorAccent"
     android:orientation="vertical"
     tools:context=".Ubs_Activiy">
-
     //Necessário para o funcionamento do ScrollView
 
     <LinearLayout
@@ -15,8 +14,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
         //Item1
+
         <RelativeLayout
             android:id="@+id/unidade1"
             android:layout_width="wrap_content"
@@ -31,7 +30,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_alignParentTop="true"
-                android:src="@drawable/ubs_jardim_aeroporto" />
+                android:src="@drawable/ubs_jdaeroporto" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -87,6 +86,7 @@
         </RelativeLayout>
 
         //Item2
+
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -156,6 +156,7 @@
         </RelativeLayout>
 
         //Item3
+
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -363,408 +364,413 @@
             </LinearLayout>
         </RelativeLayout>
 
-    //item 6
-    <RelativeLayout
+        //item 6
+
+        <RelativeLayout
             android:id="@+id/item6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/white_border"
             android:layout_margin="5dp"
+            android:background="@drawable/white_border"
             android:padding="5dp">
 
             <ImageView
                 android:id="@+id/icone6"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/ubs_imperio2"
                 android:layout_alignParentTop="true"
-                />
+                android:src="@drawable/ubs_vlimperio" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/icone6"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/ubs_imperio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:padding="5dp"
                     android:layout_marginStart="10dp"
                     android:layout_toRightOf="@id/icone6"
-                    android:text="UBS"
-                    android:textSize="15dp"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
                     android:background="@drawable/green_border"
+                    android:padding="5dp"
+                    android:text="UBS"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#fff"
-                    />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/ubs_jardim_aeroporto"
                     android:layout_marginBottom="5dp"
-                    android:padding="5dp"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@id/icone6"
-                    android:layout_alignBottom="@id/ubs_jardim_aeroporto"
+                    android:background="@drawable/green_border"
+                    android:padding="5dp"
                     android:text="Vila Império II"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textStyle="bold"
-                    android:background="@drawable/green_border"
-                    android:textColor="#fff"/>
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/endereco6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingStart="10dp"
                     android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
                     android:text="Rua Samuel Arnold, 596"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/telefone6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:text="5563-9070/5566-1611"
-                    />
+                    android:paddingStart="10dp"
+                    android:text="5563-9070/5566-1611" />
             </LinearLayout>
         </RelativeLayout>
 
-
         //Item 7
+
         <RelativeLayout
             android:id="@+id/item7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/white_border"
             android:layout_margin="5dp"
+            android:background="@drawable/white_border"
             android:padding="5dp">
 
             <ImageView
                 android:id="@+id/icone7"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/ubs_cidjulia"
                 android:layout_alignParentTop="true"
-                />
+                android:src="@drawable/ubs_cidjulia" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/icone7"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/ubs_cidjulia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:padding="5dp"
                     android:layout_marginStart="10dp"
-                    android:text="UBS"
-                    android:textSize="15dp"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
                     android:background="@drawable/green_border"
+                    android:padding="5dp"
+                    android:text="UBS"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#fff"
-                    />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:padding="5dp"
-                    android:layout_marginLeft="10dp"
                     android:layout_alignBottom="@id/ubs_jardim_aeroporto"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/green_border"
+                    android:padding="5dp"
                     android:text="Cidade Julia"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textStyle="bold"
-                    android:background="@drawable/green_border"
-                    android:textColor="#fff"/>
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/endereco7"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingStart="10dp"
                     android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
                     android:text="Rua Samuel Arnold, 596"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/telefone7"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:text="5563-9070/5566-1611"
-                    />
+                    android:paddingStart="10dp"
+                    android:text="5563-9070/5566-1611" />
             </LinearLayout>
         </RelativeLayout>
 
         //Item 8
+
         <RelativeLayout
             android:id="@+id/item8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/white_border"
             android:layout_margin="5dp"
+            android:background="@drawable/white_border"
             android:padding="5dp">
 
             <ImageView
                 android:id="@+id/icone8"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/amigosaude_logo"
                 android:layout_alignParentTop="true"
-                />
+                android:src="@drawable/amigosaude_logo" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/icone8"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/titulo8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:padding="5dp"
                     android:layout_marginStart="10dp"
-                    android:text="UBS"
-                    android:textSize="15dp"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
                     android:background="@drawable/green_border"
+                    android:padding="5dp"
+                    android:text="UBS"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#fff"
-                    />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:padding="5dp"
-                    android:layout_marginLeft="10dp"
                     android:layout_alignBottom="@id/ubs_jardim_aeroporto"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/green_border"
+                    android:padding="5dp"
                     android:text="Cidade Julia"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textStyle="bold"
-                    android:background="@drawable/green_border"
-                    android:textColor="#fff"/>
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/endereco8"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingStart="10dp"
                     android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
                     android:text="Rua Samuel Arnold, 596"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/telefone8"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:text="5563-9070/5566-1611"
-                    />
+                    android:paddingStart="10dp"
+                    android:text="5563-9070/5566-1611" />
             </LinearLayout>
         </RelativeLayout>
 
         //Item 9
+
         <RelativeLayout
             android:id="@+id/item9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/white_border"
             android:layout_margin="5dp"
+            android:background="@drawable/white_border"
             android:padding="5dp">
 
             <ImageView
                 android:id="@+id/icone9"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/amigosaude_logo"
                 android:layout_alignParentTop="true"
-                />
+                android:src="@drawable/amigosaude_logo" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/icone9"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/titulo9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:padding="5dp"
                     android:layout_marginStart="10dp"
-                    android:text="UBS"
-                    android:textSize="15dp"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
                     android:background="@drawable/green_border"
+                    android:padding="5dp"
+                    android:text="UBS"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#fff"
-                    />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:padding="5dp"
-                    android:layout_marginLeft="10dp"
                     android:layout_alignBottom="@id/ubs_jardim_aeroporto"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/green_border"
+                    android:padding="5dp"
                     android:text="Cidade Julia"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textStyle="bold"
-                    android:background="@drawable/green_border"
-                    android:textColor="#fff"/>
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/endereco9"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingStart="10dp"
                     android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
                     android:text="Rua Samuel Arnold, 596"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/telefone9"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:text="5563-9070/5566-1611"
-                    />
+                    android:paddingStart="10dp"
+                    android:text="5563-9070/5566-1611" />
             </LinearLayout>
         </RelativeLayout>
 
         //Item 10
+
         <RelativeLayout
             android:id="@+id/item10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/white_border"
             android:layout_margin="5dp"
+            android:background="@drawable/white_border"
             android:padding="5dp">
 
             <ImageView
                 android:id="@+id/icone10"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/amigosaude_logo"
                 android:layout_alignParentTop="true"
-                />
+                android:src="@drawable/amigosaude_logo" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/icone10"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/titulo10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:padding="5dp"
                     android:layout_marginStart="10dp"
-                    android:text="UBS"
-                    android:textSize="15dp"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
                     android:background="@drawable/green_border"
+                    android:padding="5dp"
+                    android:text="UBS"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#fff"
-                    />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:padding="5dp"
-                    android:layout_marginLeft="10dp"
                     android:layout_alignBottom="@id/ubs_jardim_aeroporto"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/green_border"
+                    android:padding="5dp"
                     android:text="Cidade Julia"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textStyle="bold"
-                    android:background="@drawable/green_border"
-                    android:textColor="#fff"/>
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/endereco10"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingStart="10dp"
                     android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
                     android:text="Rua Samuel Arnold, 596"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/telefone10"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:text="5563-9070/5566-1611"
-                    />
+                    android:paddingStart="10dp"
+                    android:text="5563-9070/5566-1611" />
             </LinearLayout>
         </RelativeLayout>
 
         //Item 11
+
         <RelativeLayout
             android:id="@+id/item11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/white_border"
             android:layout_margin="5dp"
+            android:background="@drawable/white_border"
             android:padding="5dp">
 
             <ImageView
                 android:id="@+id/icone11"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/amigosaude_logo"
                 android:layout_alignParentTop="true"
-                />
+                android:src="@drawable/amigosaude_logo" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/icone11"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/ubs_cdjulia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:padding="5dp"
                     android:layout_marginStart="10dp"
-                    android:text="UBS"
-                    android:textSize="15dp"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
                     android:background="@drawable/green_border"
+                    android:padding="5dp"
+                    android:text="UBS"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#fff"
-                    />
+                    android:textSize="15dp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="5dp"
-                    android:padding="5dp"
-                    android:layout_marginLeft="10dp"
                     android:layout_alignBottom="@id/ubs_jardim_aeroporto"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/green_border"
+                    android:padding="5dp"
                     android:text="Cidade Julia"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textStyle="bold"
-                    android:background="@drawable/green_border"
-                    android:textColor="#fff"/>
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/endereco12"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingStart="10dp"
                     android:paddingEnd="10dp"
+                    android:paddingStart="10dp"
                     android:text="Rua Samuel Arnold, 596"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/telefone12"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingStart="10dp"
                     android:paddingEnd="10dp"
-                    android:text="5563-9070/5566-1611"
-                    />
+                    android:paddingStart="10dp"
+                    android:text="5563-9070/5566-1611" />
             </LinearLayout>
         </RelativeLayout>
 
