@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
     android:orientation="vertical"
     tools:context=".Ubs_Activiy">
-    //Necessário para o funcionamento do ScrollView
 
+
+    //Necessário para o funcionamento do ScrollView
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
                     android:layout_height="match_parent"
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:text="R.Vieira de Moraes, 1752"
+                    android:text="R.Vieira de Moraes, 1752 - São Paulo - SP"
                     android:textStyle="bold" />
 
                 <TextView
@@ -142,7 +142,7 @@
                     android:layout_toRightOf="@id/icone2"
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:text="R. Julieta de Araújo Almeida, 44"
+                    android:text="R. Julieta de Araújo Almeida, 44 - São Paulo - SP"
                     android:textStyle="bold" />
 
                 <TextView
@@ -211,7 +211,7 @@
                     android:layout_height="match_parent"
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:text="Rua Samuel Arnold, 596"
+                    android:text="Rua Samuel Arnold, 596 - São Paulo - SP"
                     android:textStyle="bold" />
 
                 <TextView
@@ -238,7 +238,7 @@
                 android:id="@+id/icone4"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_centerVertical="true"
+                android:layout_alignParentTop="true"
                 android:src="@drawable/ubs_marpaulista" />
 
             <LinearLayout
@@ -267,7 +267,6 @@
                     android:layout_alignBottom="@id/ubs_marpaulista"
                     android:layout_marginBottom="5dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_toRightOf="@id/icone1"
                     android:background="@color/colorAccentClear"
                     android:paddingLeft="5dp"
                     android:text="Mar Paulista"
@@ -281,7 +280,7 @@
                     android:layout_height="match_parent"
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:text="R. Matsuichi Wada, 393"
+                    android:text="R. Matsuichi Wada, 393 - São Paulo - SP"
                     android:textStyle="bold" />
 
                 <TextView
@@ -334,10 +333,9 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@id/ubs_jardim_aeroporto"
+                    android:layout_alignBottom="@id/ubs_umuarama"
                     android:layout_marginBottom="5dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_toRightOf="@id/icone1"
                     android:background="@color/colorAccentClear"
                     android:padding="5dp"
                     android:text="Jardim Umuarama"
@@ -351,7 +349,7 @@
                     android:layout_height="match_parent"
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:text="Rua Samuel Arnold, 596"
+                    android:text="R. Antônio Gil, 721 - São Paulo - SP"
                     android:textStyle="bold" />
 
                 <TextView
@@ -371,7 +369,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@drawable/white_border"
+            android:background="#fff"
             android:padding="5dp">
 
             <ImageView
@@ -393,7 +391,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:layout_marginStart="10dp"
-                    android:layout_toRightOf="@id/icone6"
                     android:background="@drawable/green_border"
                     android:padding="5dp"
                     android:text="UBS"
@@ -404,7 +401,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@id/ubs_jardim_aeroporto"
+                    android:layout_alignBottom="@id/ubs_imperio"
                     android:layout_marginBottom="5dp"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@id/icone6"
@@ -421,7 +418,7 @@
                     android:layout_height="match_parent"
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:text="Rua Samuel Arnold, 596"
+                    android:text="R. Dr. Nestor Sampaio Penteado, 184 - São Paulo - SP"
                     android:textStyle="bold" />
 
                 <TextView
@@ -430,7 +427,7 @@
                     android:layout_height="match_parent"
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:text="5563-9070/5566-1611" />
+                    android:text="5624-6786/5624-6797" />
             </LinearLayout>
         </RelativeLayout>
 
@@ -441,7 +438,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@drawable/white_border"
+            android:background="#fff"
             android:padding="5dp">
 
             <ImageView
@@ -473,7 +470,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@id/ubs_jardim_aeroporto"
+                    android:layout_alignBottom="@id/ubs_cidjulia"
                     android:layout_marginBottom="5dp"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/green_border"
@@ -489,7 +486,7 @@
                     android:layout_height="match_parent"
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:text="Rua Samuel Arnold, 596"
+                    android:text="R. Paschoal Grieco, 366 - São Paulo - SP"
                     android:textStyle="bold" />
 
                 <TextView
@@ -498,7 +495,7 @@
                     android:layout_height="match_parent"
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:text="5563-9070/5566-1611" />
+                    android:text="5623-6669/5623-9993" />
             </LinearLayout>
         </RelativeLayout>
 
@@ -509,7 +506,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@drawable/white_border"
+            android:background="#fff"
             android:padding="5dp">
 
             <ImageView
@@ -517,7 +514,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_alignParentTop="true"
-                android:src="@drawable/amigosaude_logo" />
+                android:src="@drawable/ubs_jdselma" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -541,12 +538,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@id/ubs_jardim_aeroporto"
+                    android:layout_alignBottom="@id/titulo8"
                     android:layout_marginBottom="5dp"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/green_border"
                     android:padding="5dp"
-                    android:text="Cidade Julia"
+                    android:text="Jardim Selma"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#fff"
                     android:textStyle="bold" />
@@ -557,7 +554,7 @@
                     android:layout_height="match_parent"
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:text="Rua Samuel Arnold, 596"
+                    android:text="R. Pedro Fernandes Aragão, 305 - São Paulo - SP"
                     android:textStyle="bold" />
 
                 <TextView
@@ -566,7 +563,7 @@
                     android:layout_height="match_parent"
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:text="5563-9070/5566-1611" />
+                    android:text="5611-1641/5611-6743" />
             </LinearLayout>
         </RelativeLayout>
 
@@ -577,7 +574,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@drawable/white_border"
+            android:background="#fff"
             android:padding="5dp">
 
             <ImageView
@@ -585,7 +582,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_alignParentTop="true"
-                android:src="@drawable/amigosaude_logo" />
+                android:src="@drawable/ubs_vlaparecida" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -609,12 +606,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@id/ubs_jardim_aeroporto"
+                    android:layout_alignBottom="@id/titulo9"
                     android:layout_marginBottom="5dp"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/green_border"
                     android:padding="5dp"
-                    android:text="Cidade Julia"
+                    android:text="Vila Aparecida"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#fff"
                     android:textStyle="bold" />
@@ -625,7 +622,7 @@
                     android:layout_height="match_parent"
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:text="Rua Samuel Arnold, 596"
+                    android:text="Av. Batista Maciel, 430 - São Paulo - SP"
                     android:textStyle="bold" />
 
                 <TextView
@@ -634,7 +631,7 @@
                     android:layout_height="match_parent"
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:text="5563-9070/5566-1611" />
+                    android:text="5612-9644/5612-2850" />
             </LinearLayout>
         </RelativeLayout>
 
@@ -645,7 +642,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@drawable/white_border"
+            android:background="#fff"
             android:padding="5dp">
 
             <ImageView
@@ -653,7 +650,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_alignParentTop="true"
-                android:src="@drawable/amigosaude_logo" />
+                android:src="@drawable/ubs_guacuri" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -677,12 +674,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@id/ubs_jardim_aeroporto"
+                    android:layout_alignBottom="@id/titulo10"
                     android:layout_marginBottom="5dp"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/green_border"
                     android:padding="5dp"
-                    android:text="Cidade Julia"
+                    android:text="Guacuri"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#fff"
                     android:textStyle="bold" />
@@ -693,7 +690,7 @@
                     android:layout_height="match_parent"
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:text="Rua Samuel Arnold, 596"
+                    android:text="R. Valentino Fioravante, 416"
                     android:textStyle="bold" />
 
                 <TextView
@@ -702,7 +699,7 @@
                     android:layout_height="match_parent"
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:text="5563-9070/5566-1611" />
+                    android:text="5674-0921/5673-0888" />
             </LinearLayout>
         </RelativeLayout>
 
@@ -713,7 +710,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@drawable/white_border"
+            android:background="#fff"
             android:padding="5dp">
 
             <ImageView
@@ -721,7 +718,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_alignParentTop="true"
-                android:src="@drawable/amigosaude_logo" />
+                android:src="@drawable/ubs_stantonio" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -730,7 +727,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/ubs_cdjulia"
+                    android:id="@+id/titulo11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
@@ -745,12 +742,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@id/ubs_jardim_aeroporto"
+                    android:layout_alignBottom="@id/titulo11"
                     android:layout_marginBottom="5dp"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/green_border"
                     android:padding="5dp"
-                    android:text="Cidade Julia"
+                    android:text="Chácara Santo Antônio"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textColor="#fff"
                     android:textStyle="bold" />
@@ -761,7 +758,7 @@
                     android:layout_height="match_parent"
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:text="Rua Samuel Arnold, 596"
+                    android:text="R. Alexandre Dumas, 719 - São Paulo - SP"
                     android:textStyle="bold" />
 
                 <TextView
@@ -770,7 +767,7 @@
                     android:layout_height="match_parent"
                     android:paddingEnd="10dp"
                     android:paddingStart="10dp"
-                    android:text="5563-9070/5566-1611" />
+                    android:text="5181-7891/5183-6193" />
             </LinearLayout>
         </RelativeLayout>
 
