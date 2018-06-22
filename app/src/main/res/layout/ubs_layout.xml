@@ -17,7 +17,6 @@
 
 
         //Item1
-
         <RelativeLayout
             android:id="@+id/unidade1"
             android:layout_width="wrap_content"
@@ -88,7 +87,6 @@
         </RelativeLayout>
 
         //Item2
-
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -158,7 +156,6 @@
         </RelativeLayout>
 
         //Item3
-
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -458,7 +455,7 @@
                 android:layout_toRightOf="@id/icone7"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/ubs_cdjulia"
+                    android:id="@+id/ubs_cidjulia"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
@@ -525,7 +522,7 @@
                 android:layout_toRightOf="@id/icone8"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/ubs_cdjulia"
+                    android:id="@+id/titulo8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
@@ -592,7 +589,7 @@
                 android:layout_toRightOf="@id/icone9"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/ubs_cdjulia"
+                    android:id="@+id/titulo9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
@@ -659,7 +656,7 @@
                 android:layout_toRightOf="@id/icone10"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/ubs_cdjulia"
+                    android:id="@+id/titulo10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
