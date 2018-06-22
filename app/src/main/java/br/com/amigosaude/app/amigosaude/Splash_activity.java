@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.WindowManager;
 
 /**
@@ -26,6 +27,7 @@ public class Splash_activity extends AppCompatActivity{
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
+                Log.d(TAG, "Handler: Splash");
                 startActivity(new Intent(getBaseContext(), Home_Activity.class));
                 finish();
 

@@ -5,14 +5,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".PS_activity"
-    android:background="@color/colorAccentClear"
+    android:background="@color/colorAccent"
     >
 // ITEM 1
     <RelativeLayout
         android:id="@+id/item1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/white_border"
+        android:background="#fff"
         android:layout_margin="5dp"
         android:padding="5dp">
 
@@ -34,7 +34,7 @@
                 android:id="@+id/tipo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/green_border"
+                android:background="@color/colorAccentClear"
                 android:layout_marginBottom="5dp"
                 android:layout_marginStart="10dp"
                 android:padding="5dp"
@@ -45,7 +45,7 @@
                 android:id="@+id/titulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/green_border"
+                android:background="@color/colorAccentClear"
                 android:layout_marginBottom="5dp"
                 android:layout_marginStart="10dp"
                 android:padding="5dp"
@@ -81,7 +81,7 @@
         android:id="@+id/item2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/white_border"
+        android:background="#fff"
         android:layout_margin="5dp"
         android:padding="5dp">
 
@@ -103,7 +103,7 @@
                 android:id="@+id/tipo2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/green_border"
+                android:background="@color/colorAccentClear"
                 android:layout_marginBottom="5dp"
                 android:layout_marginStart="10dp"
                 android:padding="5dp"
@@ -114,7 +114,7 @@
                 android:id="@+id/titulo2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/green_border"
+                android:background="@color/colorAccentClear"
                 android:layout_marginBottom="5dp"
                 android:layout_marginStart="10dp"
                 android:padding="5dp"
@@ -150,7 +150,7 @@
         android:id="@+id/item3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/white_border"
+        android:background="#fff"
         android:layout_margin="5dp"
         android:padding="5dp">
 
@@ -172,7 +172,7 @@
                 android:id="@+id/tipo3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/green_border"
+                android:background="@color/colorAccentClear"
                 android:layout_marginBottom="5dp"
                 android:layout_marginStart="10dp"
                 android:padding="5dp"
@@ -183,7 +183,7 @@
                 android:id="@+id/titulo3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/green_border"
+                android:background="@color/colorAccentClear"
                 android:layout_marginBottom="5dp"
                 android:layout_marginStart="10dp"
                 android:padding="5dp"
