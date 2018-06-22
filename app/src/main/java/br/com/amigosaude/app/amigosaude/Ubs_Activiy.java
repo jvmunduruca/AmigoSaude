@@ -20,6 +20,7 @@ public class Ubs_Activiy extends AppCompatActivity {
         setContentView(R.layout.ubs_layout);
     }
 
+
     public void informaUnidade1(View view) {
         tv = findViewById(R.id.endereco);
         Unid = findViewById(R.id.unidade1);

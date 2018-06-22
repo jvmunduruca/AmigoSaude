@@ -65,14 +65,14 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
         txt_MapBusca = findViewById(R.id.txt_busca);
         mGps = findViewById(R.id.ic_gps);
 
+        pegaPermissoes();
+
+        iniciaMapa();
+
         Intent intent = getIntent();
         String Unid = intent.getStringExtra("Unid");
 
         txt_MapBusca.setText(Unid);
-
-        pegaPermissoes();
-
-        iniciaMapa();
 
     }
 
@@ -152,7 +152,7 @@ public class Map_activity extends FragmentActivity implements OnMapReadyCallback
     }
 
     public boolean isServicesOK(){
-        Log.d(TAG, "isServicesOK: checando versão do Goggle Services");
+        Log.d(TAG, "isServicesOK: checando versão do Google Services");
 
         int disponivel = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(this);
 

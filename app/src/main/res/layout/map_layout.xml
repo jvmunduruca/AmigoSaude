@@ -38,6 +38,7 @@
             android:id="@+id/txt_busca"
             android:background="@null"
             android:hint="Faça sua busca"
+            android:maxLines="1"
             android:imeOptions="actionSearch"/>
 
     </RelativeLayout>
